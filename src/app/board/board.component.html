@@ -1,0 +1,16 @@
+<body class="pt-5">
+    <h1 style="text-align: center;"> Next Player: {{player}}</h1>
+    <div class="d-flex justify-content-center">
+        <button style="border:none !important ;" class="btn btnColor my-3 neonText" (click)="newGame()">Start New Game</button>
+    </div>
+    
+
+    <h2 style="text-align: center;" *ngIf="winner"> {{winner}} is winner! </h2>
+
+    <main >
+        <app-square
+        *ngFor="let val of squares; let i =index"
+        [value]="val"
+        (click)="makeMove(i)"></app-square>
+    </main>
+</body>
